@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
     <head>
         <title>Geomask</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
@@ -16,6 +16,11 @@
         
         <!-- From http://www.iconfinder.com/icondetails/36182/32/map_icon -->
         <link href="static/images/favicon.ico" rel="shortcut icon" />
+        
+        <meta property="og:title" content="Geomask - highlight an area of interest using Google Maps"/>
+        <meta property="og:type" content="non_profit"/>
+        <meta property="og:url" content="http://maps.vasile.ch/geomask/"/>
+        <meta property="og:image" content="http://maps.vasile.ch/geomask/static/images/embed_social_200px.png"/>
     </head>
 
     <body>
@@ -27,7 +32,7 @@
             <div class="row">
                 <div class="span9">
                     <div id="map_canvas"></div>
-                    <div><strong>Coords:</strong> <span id="coordinates"></span> <strong>Zoom:</strong> <span id="zoom"></span></div>
+                    <div><strong>Coordinates:</strong> <span id="coordinates"></span> <strong>Zoom:</strong> <span id="zoom"></span></div>
                 </div>
                 <div class="span3">
                     <h4>Select the area of interest</h4>
@@ -61,7 +66,7 @@
                         <div class="export">
                             <span class="label label-success">GeoJSON</span>
                             <span class="label label-important hide" id="geojson_alert">Invalid GeoJSON</span>
-                            <textarea rows="4" class="btn-block" id="coordinates_geojson"></textarea>
+                            <textarea rows="5" class="btn-block" id="coordinates_geojson"></textarea>
                             <div class="pull-right">
                                 <button class="btn btn-small btn-primary" id="geojson_load">LOAD</button>
                             </div>
@@ -70,27 +75,29 @@
                         
                         <div class="export">
                             <span class="label label-success">KML&lt;Polygon&gt;</span>                        
-                            <textarea rows="4" class="btn-block" id="coordinates_kml"></textarea>
+                            <textarea rows="5" class="btn-block" id="coordinates_kml"></textarea>
                         </div>
                         
                         <div class="export">
                             <span class="label label-success">google.maps.Polygon</span>
-                            <textarea rows="4" class="btn-block" id="coordinates_gmaps_polygon"></textarea>
+                            <textarea rows="5" class="btn-block" id="coordinates_gmaps_polygon"></textarea>
                         </div>
                     </div>
+                    
+                    <h4>About</h4>
+                    <p>This tool was created by <a href="http://www.vasile.ch">Vasile Coțovanu</a> and the source code is available on <a href="https://github.com/vasile/geomask" target="_new">Github</a>.</p>
+                    <p>Please use <a href="https://docs.google.com/forms/d/1ZWCqfF8OvRBlMPHMc5FbL6T3zYhQ-p18B8IIwMt1sRs/viewform">this form</a> to send your suggestions and / or feedback. Thanks !</p>
                 </div>
             </div>
-            
-            <br/>
-            
-            <footer>
-                <p>&copy; <a href="http://www.vasile.ch">Vasile Coțovanu</a> 2013</p>
-            </footer>
+        </div>
+        
+        <div id="github_badge">
+            <a href="https://github.com/vasile/geomask" target="_blank"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
         </div>
         
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?v=3.12&amp;sensor=false&amp;libraries=places"></script>
         
-        <script src="static/page.js"></script>
+        <script src="static/page.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
