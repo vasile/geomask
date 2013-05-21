@@ -271,19 +271,7 @@ $(document).ready(function() {
 
                 geojson_coordinates.push([parseFloat(p_x), parseFloat(p_y)]);
                 kml_coordinates.push(p_x + ',' + p_y);
-                gmaps_polygon_path.push('new google.maps.LatLng(' + p_y + ', ' + p_x + ')');
-                
-                var step = path.getLength() <= 5 ? 1 : 10;
-                if ((k % step) === 0) {
-                    var ib = new InfoBox({
-                        closeBoxURL: '',
-                        content: '<span class="badge badge-success">' + k + '</span>',
-                        disableAutoPan: true,
-                        position: point
-                    });
-                    ib.open(map);
-                    ibs.push(ib);
-                }
+                gmaps_polygon_path.push('new google.maps.LatLng(' + p_y + ', ' + p_x + ')');                
             });
             
             geojson_coordinates.push([parseFloat(p_x0), parseFloat(p_y0)]);
