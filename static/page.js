@@ -9,8 +9,11 @@ $(document).ready(function() {
         if (typeof(localStorage.map_center_x) !== 'undefined') {
             map_intial_center = new google.maps.LatLng(parseFloat(localStorage.map_center_y), parseFloat(localStorage.map_center_x));
             map_inital_zoom = parseInt(localStorage.map_zoom, 10);
+        }
+        
+        if (typeof(localStorage.map_type_id) !== 'undefined') {
             map_initial_type_id = localStorage.map_type_id;
-        } 
+        }
     }
     
     var map = new google.maps.Map($('#map_canvas')[0], {
